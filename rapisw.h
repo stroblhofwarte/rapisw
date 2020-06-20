@@ -23,38 +23,16 @@
 
 #pragma once
 
-#include "indifocuser.h"
+#include "basefocuser.h"
 
-class RapiSW : public INDI::Focuser
+class RapiSW 
+{
   public:
-    RapiSW() = default;
-    bool ISNewSwitch(const char *dev, const char *name, ISState *states, char *names[], int n);
-    bool ISNewText(const char *dev, const char *name, char *texts[], char *names[], int n);
-    virtual void ISGetProperties(const char *dev);
-
+    RapiSW();
+    
   protected:
-    // General device functions
-    bool Connect();
-    bool Disconnect();
-    const char *getDefaultName();
-    bool initProperties();
-    bool updateProperties();
-    virtual bool saveConfigItems(FILE *fp);
-
+    
   private:
-    ISwitch Outlet1S[2];
-    ISwitchVectorProperty Outlet1SP;
     
-    ISwitch Outlet2S[2];
-    ISwitchVectorProperty Outlet2SP;
-    
-    ITextVectorProperty Outlet1NameTP;
-    IText Outlet1NameT[1] {};
-    
-    ITextVectorProperty Outlet2NameTP;
-    IText Outlet2NameT[1] {};
-    
-    INumberVectorProperty Outlet3NP;
-    INumber Outlet3N[1];
         
 };

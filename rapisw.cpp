@@ -26,8 +26,6 @@
 #include <memory>
 #include <cstring>
 
-std::unique_ptr<BaseFocuser> focuserOne(new BaseFocuser("FocuserOne"));
-std::unique_ptr<BaseFocuser> focuserTwo(new BaseFocuser("FocuserTwo"));
 
 RapiSW::RapiSW()
 {

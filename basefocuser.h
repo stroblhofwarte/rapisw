@@ -26,23 +26,22 @@
 #include "indifocuser.h"
 
 class BaseFocuser : public INDI::Focuser
+{
   public:
-    BaseFocuser();
+    BaseFocuser(char *thisName);
     ~BaseFocuser() override = default;
-    bool ISNewSwitch(const char *dev, const char *name, ISState *states, char *names[], int n);
-    bool ISNewText(const char *dev, const char *name, char *texts[], char *names[], int n);
-    virtual void ISGetProperties(const char *dev);
-    void ISGetProperties(const char *dev);
-    void ISNewNumber(const char *dev, const char *name, double values[], char *names[], int n);
-    void ISNewBLOB(const char *dev, const char *name, int sizes[], int blobsizes[], char *blobs[], char *formats[], char *names[], int n);
-    void ISSnoopDevice(XMLEle *root);
-
+    bool ISNewSwitch(const char *dev, const char *name, ISState *states, char *names[], int n) override;
+    bool ISNewText(const char *dev, const char *name, char *texts[], char *names[], int n) override;
+    void ISGetProperties(const char *dev) override;
+    bool ISNewNumber(const char *dev, const char *name, double values[], char *names[], int n) override;
+    bool ISNewBLOB(const char *dev, const char *name, int sizes[], int blobsizes[], char *blobs[], char *formats[], char *names[], int n) override;
+    const char *getDefaultName() override;
 
   protected:
     // General device functions
     bool Connect();
     bool Disconnect();
-    virtual const char *getDefaultName();
+    
     bool initProperties();
     bool updateProperties();
     virtual bool saveConfigItems(FILE *fp);

@@ -23,7 +23,7 @@ include(CMakeCommon)
 
 set(GPIO_LIBRARIES "libgpiod.so")
 
-############# INDI PICAMERA ###############
+############# INDI RAPISW ###############
 set(indirapisw_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/basefocuser.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/rapisw.cpp
