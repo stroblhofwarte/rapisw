@@ -22,4 +22,6 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 sudo make install
 
 ```
+Driver shows up in Astroberry as "RapiSW" under Focuser section.
+
 
