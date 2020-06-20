@@ -3,6 +3,8 @@ RapiSW is a small open HW/SW project. This project use a Raspberry pi 3 and a PC
 This board runs with 12V and piggyback the raspberry pi baord. A simple and cheap pre-build DC converter is used for the +5V/5amp for Pi and dew caps. The stepper motors are driven by two DRV8834.
 The rapsberry pi could be setup with Astroberry.
 
+State: Board is in production. Nothing tested yet.
+
 # Thanks to:
 This driver was inspired by the work of Radek Kaczorek (https://github.com/rkaczorek/astroberry-diy). 
 
